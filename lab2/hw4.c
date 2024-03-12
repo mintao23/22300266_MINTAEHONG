@@ -203,8 +203,8 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 	int code;
 	while(yesno==1){
 		int check=1;
-		int con1=1, con2=1;
 		while(check==1){
+			int con1=1, con2=1;
 			printf(">> Enter a class code > ");
 			scanf("%d",&code);
 			for(int i=0;i<msize;i++){
@@ -217,6 +217,7 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 				for(int i=0;i<csize;i++){
 					if(code==c[i]->code){
 						printf(">> [%d] %s [credit %d - %s]\n",c[i]->code, c[i]->name, c[i]->unit, kname[c[i]->grading-1]);
+						my[msize]=code;
 						msize++;
 						con2=0;
 						check=0;
