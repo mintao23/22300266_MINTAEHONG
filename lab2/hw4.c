@@ -232,7 +232,7 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 		scanf("%d",&yesno);
 	}
 	printf("%d classes has been applied.\n",msize);
-	return 0;
+	return msize;
 }
 
 void printMyClasses(int my[], int msize, struct st_class* c[], int csize){
