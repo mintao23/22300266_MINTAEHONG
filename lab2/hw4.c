@@ -217,7 +217,7 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 			if(con1!=0){
 				for(int i=0;i<csize;i++){
 					if(code==c[i]->code){
-						printf(">> [%d] %s [credits %d - %s]\n",c[i]->code, c[i]->name, c[i]->unit, kname[c[i]->grading-1]);
+						printf(">> [%d] %s [credit %d - %s]\n",c[i]->code, c[i]->name, c[i]->unit, kname[c[i]->grading-1]);
 						msize++;
 						con2=0;
 						check=0;
@@ -231,12 +231,20 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 		printf(">> Add more?(1:Yes 2:No) > ");
 		scanf("%d",&yesno);
 	}
-	
+	printf("%d classes has been applied.\n");
 	return 0;
 }
 
 void printMyClasses(int my[], int msize, struct st_class* c[], int csize){
-
+	printf("> 6.My classes\n");
+	for(int i=0;i<msize;i++){
+		for(int j=0;j<csize;j++){
+			if(my[i]==c[j]->code){
+				printf("%d. [%d] %s [credit %d - %s]\n",i+1,c[j]->code, c[j]->name, c[j]->unit, kname[c[j]->grading-1]);
+				break;
+			}
+		}
+	}
 
 	
 
