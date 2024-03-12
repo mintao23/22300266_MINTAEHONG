@@ -135,9 +135,21 @@ int addNewClass(struct st_class* c[], int csize){
 // You must complete this function.
 
 	struct st_class* p = (struct st_class*)malloc(sizeof(struct st_class));
-
-	printf(">> code number > ");
-	scanf("%d", &(p->code));
+	int check=0;
+	int code;
+	while(check==0){
+		printf(">> code number > ");
+		scanf("%d", &code);
+		for(int i=0;i<csize;i++){
+			if(code==c[i]->code){
+				printf("Code duplicated! Retry.\n");
+				check--;
+				break;
+			}
+		}
+		check++;
+	}
+	p->code=code;
 	printf(">> class name > ");
 	scanf("%s", p->name);
 	printf(">> credits > ");
