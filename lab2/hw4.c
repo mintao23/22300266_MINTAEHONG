@@ -164,14 +164,25 @@ int addNewClass(struct st_class* c[], int csize){
 void editClass(struct st_class* c[], int csize){
 	struct st_class* p;
 	int code;
-	printf(">> Enter a code of class > ");
-	scanf("%d", &code);
+	
 
 	
 	// You must complete this section.
-
-
-	
+	int check=-1;
+	while(check==-1){
+		printf(">> Enter a code of class > ");
+		scanf("%d", &code);
+		for(int i=0;i<csize;i++){
+			if(code==c[i]->code){
+				check=i;
+				break;
+			}
+		}
+		if(check==-1){
+			printf("No such class.\n");
+		}
+	}
+	p=c[check];
 	printf("> Current: [%d] %s [credits %d - %s]\n",p->code, p->name, p->unit, kname[p->grading-1]);
 	printf("> Enter new class name > ");
 	scanf("%s", p->name);
@@ -188,9 +199,38 @@ void editClass(struct st_class* c[], int csize){
 // You must make all these functions.
 
 int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
-
-
-
+	printf("> 5.Apply a class\n");
+	int yesno=1;
+	int code;
+	while(yesno==1){
+		int check=1;
+		int con1=1, con2=1;
+		while(check==1){
+			printf(">> Enter a class code > ");
+			scanf("%d",&code);
+			for(int i=0;i<msize;i++){
+				if(code==my[i]){
+					printf(">> Already covered subjects.\n");
+					con1=0;
+				}
+			}
+			if(con1!=0){
+				for(int i=0;i<csize;i++){
+					if(code==c[i]->code){
+						printf(">> [%d] %s [credits %d - %s]\n",c[i]->code, c[i]->name, c[i]->unit, kname[c[i]->grading-1]);
+						msize++;
+						con2=0;
+						check=0;
+					}
+				}
+				if(con2!=0){
+					printf(">> No such code of class.\n");
+				}
+			}
+		}
+		printf(">> Add more?(1:Yes 2:No) > ");
+		scanf("%d",&yesno);
+	}
 	
 	return 0;
 }
