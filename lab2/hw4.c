@@ -231,11 +231,12 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 		printf(">> Add more?(1:Yes 2:No) > ");
 		scanf("%d",&yesno);
 	}
-	printf("%d classes has been applied.\n");
+	printf("%d classes has been applied.\n",msize);
 	return 0;
 }
 
 void printMyClasses(int my[], int msize, struct st_class* c[], int csize){
+	printf("%d",msize);
 	for(int i=0;i<msize;i++){
 		for(int j=0;j<csize;j++){
 			if(my[i]==c[j]->code){
