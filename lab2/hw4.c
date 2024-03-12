@@ -199,7 +199,6 @@ void editClass(struct st_class* c[], int csize){
 // You must make all these functions.
 
 int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
-	printf("> 5.Apply a class\n");
 	int yesno=1;
 	int code;
 	while(yesno==1){
@@ -236,7 +235,6 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 }
 
 void printMyClasses(int my[], int msize, struct st_class* c[], int csize){
-	printf("> 6.My classes\n");
 	for(int i=0;i<msize;i++){
 		for(int j=0;j<csize;j++){
 			if(my[i]==c[j]->code){
@@ -245,8 +243,6 @@ void printMyClasses(int my[], int msize, struct st_class* c[], int csize){
 			}
 		}
 	}
-
-	
 
 }
 
