@@ -231,7 +231,6 @@ int applyMyClasses(int my[], int msize, struct st_class* c[], int csize){
 		printf(">> Add more?(1:Yes 2:No) > ");
 		scanf("%d",&yesno);
 	}
-	printf("%d classes has been applied.\n",msize);
 	return msize;
 }
 
