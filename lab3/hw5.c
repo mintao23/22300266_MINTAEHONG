@@ -211,7 +211,9 @@ void searchChannel(struct st_channel* c[], int size){
         if (!found) {
             printf("No channels found matching the specified name.\n");
         }
-	} 
+	}else{
+		printf("Invalid choice. Please enter 1 or 2.\n");
+	}
 }
 
 
