@@ -181,7 +181,7 @@ void searchChannel(struct st_channel* c[], int size){
         int minSubs, maxSubs;
         printf("> Enter the range of people (from ~ to) > ");
         scanf("%d %d", &minSubs, &maxSubs);
-		printf(">Result:\n");
+		printf("> Result:\n");
         int found = 0; 
         for (int i = 0; i < size; i++) {
             if (c[i]->count >= minSubs && c[i]->count <= maxSubs) {
@@ -194,8 +194,25 @@ void searchChannel(struct st_channel* c[], int size){
         if (!found) {
             printf("No channels found within the specified subscriber count range.\n");
         }
-    } 
-} 
+    }else if (choice == 2) {
+        char searchName[100];
+        printf("> Enter a name ");
+        scanf(" %s", searchName);
+		printf("> Result:\n");
+        int found = 0; // 검색 결과 여부를 나타내는 변수
+        for (int i = 0; i < size; i++) {
+            if (strstr(c[i]->name, searchName) != NULL) {
+                printf("[%2d] %-20s %10d peoples [%s] \n", i + 1, c[i]->name, c[i]->count, LNAME[c[i]->level]);
+				count++;
+                found = 1;
+            }
+        }
+		printf("> %d channels are found.\n",count);
+        if (!found) {
+            printf("No channels found matching the specified name.\n");
+        }
+	} 
+}
 
 
 void updateChannel(struct st_channel* c[], int size){
