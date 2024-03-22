@@ -133,7 +133,7 @@ void printStatistics(struct st_channel* c[], int size){
 		}
 	}
 	for(int i=0;i<5;i++){
-		double averageSubs = (double)sumByLevel[i] / countByLevel[i];
+		double averageSubs = (double)sumLevel[i] / countLevel[i];
 		printf("%s : %d channels, Average %.1f, Top channel : %d\n",LNAME[i], countLevel[i], averageSubs, maxSubsLevel[i]);
 	}
 
