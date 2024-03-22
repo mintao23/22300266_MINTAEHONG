@@ -123,18 +123,20 @@ void printStatistics(struct st_channel* c[], int size){
 	printf("> Statistics of Channels\n");
 	int countLevel[5]={0};
 	int sumLevel[5]={0};
-	int maxSubsLevel[5]={INT_MIN};
+	int maxSubsLevel[5]={-1,-1,-1,-1,-1};
+	char maxSubsChannel[5][100];
 	for(int i=0;i<size;i++){
 		int level=c[i]->level;
 		countLevel[level]++;
 		sumLevel[level]+=c[i]->count;
-		if(c[i]->count>maxSubLevel[level]){
+		if(c[i]->count>maxSubsLevel[level]){
 			maxSubsLevel[level]=c[i]->count;
+			strcpy(maxSubsChannel[level], c[i]->name);
 		}
 	}
 	for(int i=0;i<5;i++){
 		double averageSubs = (double)sumLevel[i] / countLevel[i];
-		printf("%s : %d channels, Average %.1f, Top channel : %d\n",LNAME[i], countLevel[i], averageSubs, maxSubsLevel[i]);
+		printf("%s : %d channels, Average %.1f, Top channel : %s (%d people)\n",LNAME[i], countLevel[i], averageSubs, maxSubsChannel[i], maxSubsLevel[i]);
 	}
 
 }
