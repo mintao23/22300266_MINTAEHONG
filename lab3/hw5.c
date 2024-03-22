@@ -264,6 +264,37 @@ int deleteChannel(struct st_channel* c[], int size){
 
 
 void makeReport(struct st_channel* c[], int size){
+	FILE* file;
 
-
+	file=fopen("channels.txt", "w");
+	for (int i = 0; i < size; i++) {
+        fprintf(file, "%s %d\n", c[i]->name, c[i]->count);
+    }
+	fclose(file);
+	FILE* file1;
+	file1=fopen("report.txt","w");
+	fprintf(file1,"Channel List\n");
+	for (int i = 0; i < size; i++) {
+        fprintf(file1, "[%2d] %-20s %10d peoples [%s]\n", i + 1, c[i]->name, c[i]->count, LNAME[c[i]->level]);
+    }
+	fprintf(file1,"\nStatistics of Channels\n");
+	int countLevel[5]={0};
+	int sumLevel[5]={0};
+	int maxSubsLevel[5]={-1,-1,-1,-1,-1};
+	char maxSubsChannel[5][100];
+	for(int i=0;i<size;i++){
+		int level=c[i]->level;
+		countLevel[level]++;
+		sumLevel[level]+=c[i]->count;
+		if(c[i]->count>maxSubsLevel[level]){
+			maxSubsLevel[level]=c[i]->count;
+			strcpy(maxSubsChannel[level], c[i]->name);
+		}
+	}
+	for(int i=0;i<5;i++){
+		double averageSubs = (double)sumLevel[i] / countLevel[i];
+		fprintf(file1, "%s : %d channels, Average %.1f, Top channel : %s (%d people)\n",LNAME[i], countLevel[i], averageSubs, maxSubsChannel[i], maxSubsLevel[i]);
+	}
+	fclose(file1);
+	printf("> All information of channels are saved into channels.txt.\n> Channel Statistics are saved into report.txt.\n");
 }
