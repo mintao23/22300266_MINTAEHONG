@@ -71,7 +71,7 @@ int main(void) {
 	return 0;
 }
 
-int loadData(struct st_channel* c[]){
+int loadData(struct st_channel* c[]){//데이터 불러오기
 	int no=0;
 	FILE* file;
 
@@ -89,7 +89,7 @@ int loadData(struct st_channel* c[]){
 	return no;
 }
 
-int findLevel(int num){
+int findLevel(int num){//구독자수 별 등급 나누기
 	int range[5]={1000,10000,100000,1000000,10000000}; // range for level
 	for(int j=0;j<5;j++)
 		if(num<range[j])
@@ -97,14 +97,14 @@ int findLevel(int num){
 	return 0;
 }
 
-void printChannels(struct st_channel* c[], int size){
+void printChannels(struct st_channel* c[], int size){//채널 명단 출력
 	printf("> List of Channels\n");
 	for(int i=0; i<size; i++){
 		printf("[%2d] %-20s %10d peoples [%s] \n",i+1, c[i]->name, c[i]->count,LNAME[c[i]->level]);
 	}
 }
 
-int addChannel(struct st_channel* c[], int size){
+int addChannel(struct st_channel* c[], int size){//채널 추가
 	struct st_channel* temp;
 	printf("> Add a new Channel\n");
 	temp = (struct st_channel*)malloc(sizeof(struct st_channel));
@@ -119,7 +119,7 @@ int addChannel(struct st_channel* c[], int size){
 	return size+1;
 }
 
-void printStatistics(struct st_channel* c[], int size){
+void printStatistics(struct st_channel* c[], int size){//채널들 통계
 	printf("> Statistics of Channels\n");
 	int countLevel[5]={0};
 	int sumLevel[5]={0};
@@ -141,7 +141,7 @@ void printStatistics(struct st_channel* c[], int size){
 
 }
 
-void pickupRandomChannels(struct st_channel* c[], int size) {
+void pickupRandomChannels(struct st_channel* c[], int size) {//임의로 선정한 값만큼 채널 추첨
     printf("> Pick up Channels\n");
     printf("> How many channels do you want to pick up? > ");
     int pick;
@@ -171,7 +171,7 @@ void pickupRandomChannels(struct st_channel* c[], int size) {
         printf("[%2d] %-20s %10d peoples [%s] \n", chnum[i] + 1, c[chnum[i]]->name, c[chnum[i]]->count, LNAME[c[chnum[i]]->level]);
     }
 }
-void searchChannel(struct st_channel* c[], int size){
+void searchChannel(struct st_channel* c[], int size){//채널 검색
 	printf("> Search Channels\n");
 	printf("> Choose one (1:by peoples 2:by names) > ");
 	int choice;
@@ -217,7 +217,7 @@ void searchChannel(struct st_channel* c[], int size){
 }
 
 
-void updateChannel(struct st_channel* c[], int size){
+void updateChannel(struct st_channel* c[], int size){//채널 정보 수정
 	printf("> Modify a new Channel\n");
 	printf("> Enter a number of channel > ");
 	int index;
@@ -237,7 +237,7 @@ void updateChannel(struct st_channel* c[], int size){
 	printf("> Channel info. is modified.");
 }
 
-int deleteChannel(struct st_channel* c[], int size){
+int deleteChannel(struct st_channel* c[], int size){//채널 삭제
 	int no, yesno;
 	printf("> Delete a new Channel\n");
 	printf("> Enter a number of channel > ");
@@ -263,7 +263,7 @@ int deleteChannel(struct st_channel* c[], int size){
 }
 
 
-void makeReport(struct st_channel* c[], int size){
+void makeReport(struct st_channel* c[], int size){//저장
 	FILE* file;
 
 	file=fopen("channels.txt", "w");
