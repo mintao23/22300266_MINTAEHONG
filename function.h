@@ -4,12 +4,12 @@
 #include "data.h" // 데이터 헤더 파일 포함
 
 // 함수 프로토타입
-void load_data_from_file(Item *items, int *num_items);
-void save_data_to_file(Item *items, int num_items);
-void add_item(Item *items, int *num_items);
-void view_all_items(Item *items, int num_items);
-void update_item(Item *items, int num_items);
-void delete_item(Item *items, int *num_items);
-void search_items(Item *items, int num_items);
+void load_data(char *filename, Game *games, int *num_games);
+void create(Game *games, int *num_games);
+void read(Game *games, int *num_games);
+void update(Game *games, int *num_games);
+void delete_game(Game *games, int *num_games);
+void search(Game *games, int *num_games);
+void save_data_to_file(Game *games, int num_games);
 
 #endif // FUNCTION_H

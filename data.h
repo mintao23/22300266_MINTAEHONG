@@ -1,11 +1,17 @@
 #ifndef DATA_H
 #define DATA_H
 
-// 데이터 구조체 정의
+#define MAX_GAMES 100
+
 typedef struct {
-    char name[50];
-    char category[50];
-    float price;
-} Item;
+    int id;
+    char name[100];
+    int price;
+    int rate;
+    int dlc;
+} Game;
+
+void load_data_from_file(Game *games, int *num_games);
+void save_data_to_file(Game *games, int num_games);
 
 #endif // DATA_H
