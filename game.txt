@@ -1,12 +1,12 @@
- 1 sanabi                     15500  5  0
- 2 bladeassault               19000  3  0
- 3 darkestdungeon             27000  5  1
- 4 deadcells                  25800  5  1
- 5 enderlilies                26500  4  0
- 6 fortheking                 20500  4  1
- 7 gunfirereborn              20500  4  1
- 8 haveanicedeath             27000  4  0
- 9 hollowknight               16500  5  1
+1  Sanabi                     10500  5  0
+2  bladeassault               19000  3  0
+3  darkestdungeon             27000  5  1
+4  deadcells                  25800  5  1
+5  enderlilies                26500  4  0
+6  fortheking                 20500  4  1
+7  gunfirereborn              20500  4  1
+8  haveanicedeath             27000  4  0
+9  hollowknight               16500  5  1
 10 lethalcompany              11000  5  0
 11 libraryofruina             31000  4  0
 12 limbuscompany                  0  4  0
