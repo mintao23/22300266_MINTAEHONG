@@ -62,6 +62,24 @@ void read(Game *games, int num_games) {
 
 void update(Game *games, int num_games) {
     // 게임 정보 업데이트하는 코드
+    printf("Enter a number to change info: ");
+    int num;
+    scanf("%d",&num);
+    for(int i=0;i<num_games;i++){
+        if(num==games[i].number){
+            printf("%-2d %-25s %6d %2d %2d\n",games[i].number,games[i].name,games[i].price,games[i].rate,games[i].dlc);
+            printf("New Name: ");
+            scanf("%s", games[i].name);
+            printf("New Price: ");
+            scanf("%d", &games[i].price);
+            printf("New Rate(5~0): ");
+            scanf("%d", &games[i].rate);
+            printf("New check DLC(1:YES 0:NO): ");
+            scanf("%d", &games[i].dlc);
+            printf("The info is changed.\n");
+            break;
+        }
+    }
 }
 
 void delete_game(Game *games, int *num_games) {
