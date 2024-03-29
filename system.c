@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "system.h"
 #define MAX_GAMES 100
 
@@ -107,10 +108,26 @@ void delete_game(Game *games, int *num_games) {
     }
 }
 
-
 void search(Game *games, int num_games) {
-    // 게임 검색하는 코드
+    // 검색할 문자열 입력
+    printf("Enter the starting letters of the game name to search: ");
+    char search_prefix[100];
+    scanf("%s", search_prefix);
+    int found = 0;
+    for (int i = 0; i < num_games; i++) {
+        if (strncmp(games[i].name, search_prefix, strlen(search_prefix)) == 0) {
+            if (!found) {
+                printf("Matching games:\n");
+                found = 1;
+            }
+            printf("%-2d %-25s %6d %2d %2d\n", games[i].number, games[i].name, games[i].price, games[i].rate, games[i].dlc);
+        }
+    }
+    if (!found) {
+        printf("No games found starting with '%s'.\n", search_prefix);
+    }
 }
+
 void popular(Game *games, int num_games){
     // 평점5점게임 추천받는 코드
 }
