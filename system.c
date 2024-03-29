@@ -83,8 +83,30 @@ void update(Game *games, int num_games) {
 }
 
 void delete_game(Game *games, int *num_games) {
-    // 게임 삭제하는 코드
+    // 삭제할 게임 번호 입력
+    printf("Enter the number of the game to delete: ");
+    int num;
+    scanf("%d", &num);
+    int found = 0;
+    for (int i = 0; i < *num_games; i++) {
+        if (games[i].number == num) {
+            found = 1;
+            for (int j = i; j < *num_games - 1; j++) {
+                games[j] = games[j + 1];
+                games[j].number--;
+            }
+            (*num_games)--; 
+            break;
+        }
+    }
+
+    if (found) {
+        printf("Game with number %d is deleted.\n", num);
+    } else {
+        printf("Game with number %d is not found.\n", num);
+    }
 }
+
 
 void search(Game *games, int num_games) {
     // 게임 검색하는 코드
