@@ -66,8 +66,10 @@ void update(Game *games, int num_games) {
     printf("Enter a number to change info: ");
     int num;
     scanf("%d",&num);
+    int found = 0;
     for(int i=0;i<num_games;i++){
         if(num==games[i].number){
+            found = 1;
             printf("%-2d %-25s %6d %2d %2d\n",games[i].number,games[i].name,games[i].price,games[i].rate,games[i].dlc);
             printf("New Name: ");
             scanf("%s", games[i].name);
@@ -80,6 +82,9 @@ void update(Game *games, int num_games) {
             printf("The info is changed.\n");
             break;
         }
+    }
+    if(!found) {
+        printf("Game with number %d is not found.\n", num);
     }
 }
 
