@@ -1,7 +1,7 @@
 CC = gcc
 SRC = main.c system.c
 OBJ = $(SRC:.c=.o)
-EXEC = main
+EXEC = game
 
 $(EXEC): $(OBJ)
 	$(CC) -o $@ $^

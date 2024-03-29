@@ -1,26 +1,25 @@
-No. Name                     price  rate dlc
-1   sanabi                   15500  5    0
-2   bladeassault             19000  3    0
-3   darkestdungeon           27000  5    1
-4   deadcells                25800  5    1
-5   enderlilies              26500  4    0
-6   fortheking               20500  4    1
-7   gunfirereborn            20500  4    1
-8   haveanicedeath           27000  4    0
-9   hollowknight             16500  5    1
-10  lethalcompany            11000  5    0
-11  libraryofruina           31000  4    0
-12  limbuscompany                0  4    0
-13  lobotomycorporation      26000  4    0
-14  oriandtheblindforest     19900  5    1
-15  oriandthewillofthewisps  29900  5    0
-16  palworld                 32000  4    0
-17  phasmophobia             14500  5    0
-18  skul:theheroslayer       20500  4    1
-19  tabletopsimulator        21000  5    1
-20  tekken8                  79800  4    1
-21  terraria                 11000  5    1
-22  undertale                10500  5    0
-23  unturned                     0  4    1
-24  fivenightsatfreddy's      5500  4    0
-25  hades                    27000  5    0
+ 1 sanabi                     15500  5  0
+ 2 bladeassault               19000  3  0
+ 3 darkestdungeon             27000  5  1
+ 4 deadcells                  25800  5  1
+ 5 enderlilies                26500  4  0
+ 6 fortheking                 20500  4  1
+ 7 gunfirereborn              20500  4  1
+ 8 haveanicedeath             27000  4  0
+ 9 hollowknight               16500  5  1
+10 lethalcompany              11000  5  0
+11 libraryofruina             31000  4  0
+12 limbuscompany                  0  4  0
+13 lobotomycorporation        26000  4  0
+14 oriandtheblindforest       19900  5  1
+15 oriandthewillofthewisps    29900  5  0
+16 palworld                   32000  4  0
+17 phasmophobia               14500  5  0
+18 skul:theheroslayer         20500  4  1
+19 tabletopsimulator          21000  5  1
+20 tekken8                    79800  4  1
+21 terraria                   11000  5  1
+22 undertale                  10500  5  0
+23 unturned                       0  4  1
+24 fivenightsatfreddy's        5500  4  0
+25 hades                      27000  5  0
