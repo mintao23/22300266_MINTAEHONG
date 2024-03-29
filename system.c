@@ -129,6 +129,20 @@ void search(Game *games, int num_games) {
 }
 
 void popular(Game *games, int num_games){
-    // 평점5점게임 추천받는 코드
+    // 평점이 5점인 게임 추천
+    printf("Top rated games:\n");
+    int found = 0;
+    for (int i = 0; i < num_games; i++) {
+        if (games[i].rate == 5) {
+            if (!found) {
+                found = 1;
+            }
+            printf("%-2d %-25s %6d %2d %2d\n", games[i].number, games[i].name, games[i].price, games[i].rate, games[i].dlc);
+        }
+    }
+    if (!found) {
+        printf("No top rated games found.\n");
+    }
 }
+
 
