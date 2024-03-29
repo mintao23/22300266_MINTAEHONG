@@ -83,7 +83,7 @@ void update(Game *games, int num_games) {
             break;
         }
     }
-    if(!found) {
+    if(found==0) {
         printf("Game with number %d is not found.\n", num);
     }
 }
